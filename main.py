@@ -27,8 +27,5 @@ if __name__ == '__main__':
 
     sJ = calcGussianElimination()
 
-
-
-
     find_roots_np(1, 2, 3, 4, 5)
 

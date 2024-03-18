@@ -6,7 +6,7 @@ from colors import bcolors
 def find_roots_np(a, b, c, d, e):
     # Define the function
     def f(x):
-        return 5 * x**6 - 3 * x**5 - 4 * x**2 - 2
+        return e * x**6 - c * x**5 - d * x**2 - b
 
     # Generate a range of x values
     x_values = np.linspace(-100, 100, 10000)
@@ -23,18 +23,7 @@ def find_roots_np(a, b, c, d, e):
         print(bcolors.OKBLUE, "Root:", root, bcolors.ENDC)
 
 def bisection_method(f, a, b, tol=1e-6):
-    """
-    Implements the bisection method to find roots of the equation f(x) = 0 within a specified range.
 
-    Args:
-    f (function): The function for which roots are to be found.
-    a (float): Lower bound of the search range.
-    b (float): Upper bound of the search range.
-    tol (float): Tolerance (stop when |b - a| < tol).
-
-    Returns:
-    float: Approximation of the root.
-    """
     while (b - a) >= tol:
         # Find midpoint
         c = (a + b) / 2.0
