@@ -1,7 +1,6 @@
-import numpy as np
 from matrix_utility import swap_row
-from inverseMatrix import inverse
-from colors import bcolors
+import numpy as np
+from numpy.linalg import svd
 
 
 
@@ -60,7 +59,7 @@ def forward_substitution(mat):
     return -1
 
 
-# function to calculate the values of the unknowns
+
 def backward_substitution(mat):
     N = len(mat)
     x = np.zeros(N)  # An array to store solution
@@ -81,20 +80,6 @@ def backward_substitution(mat):
 
 def calcGussianElimination(): # function that solve equation by gaussian elimination method and returns the solution
 
-
-
-    # A_b1 = np.array([[1, 10, -10],
-    #               [0, 4, 6],
-    #               [0, 1, 9]])
-
-    # A_b2 = [[1, -1, 2, -1],
-    #         [2, -2, 3, -3],
-    #         [1, 1, 1, 0]]
-
-    A_b1 = np.array([[2, 1, -1],
-           [4, -6, 2],
-           [-2, 7, 2]])
-
     A_b2 = np.array([[2, 3, 4, 5, 6],
            [-5, 3, 4, -2,3],
            [4, -5, -2, 2, 6],
@@ -103,7 +88,7 @@ def calcGussianElimination(): # function that solve equation by gaussian elimina
 
 
 
-    result = gaussianElimination(A_b2) # solution_matrix)
+    result = gaussianElimination(A_b2)
     if isinstance(result, str):
         print(result)
     # else:
@@ -115,33 +100,6 @@ def calcGussianElimination(): # function that solve equation by gaussian elimina
 
 
 
-#
-# import numpy as np
-# from numpy.linalg import svd
-#
-# def solve_svd(A, b):
-#     U, S, Vt = svd(A)
-#     pseudo_inverse = np.dot(Vt.T, np.dot(np.diag(1/S), U.T))
-#     return np.dot(pseudo_inverse, b)
-#
-# def calcGussianElimination():
-#     A_b2 = np.array([[2, 3, 4, 5, 6],
-#                      [-5, 3, 4, -2, 3],
-#                      [4, -5, -2, 2, 6],
-#                      [4, 5, -1, -2, -3],
-#                      [5, 5, 3, -3, 5]])
-#
-#     b1 = np.array([70, 20, 26, -12, 37])
-#
-#     result = solve_svd(A_b2, b1)
-#     print("Solution:", result)
-#
-# if __name__ == '__main__':
-#     calcGussianElimination()
-
-
-import numpy as np
-from numpy.linalg import svd
 
 def solve_svd(A, b):
     U, S, Vt = svd(A)

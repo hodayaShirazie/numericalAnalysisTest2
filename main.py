@@ -5,7 +5,7 @@ from colors import bcolors
 
 def printInput():
     print(bcolors.HEADER + "INPUT: " + bcolors.ENDC)
-    print("matrix = A_b2 = np.array([[2, 3, 4, 5, 6],"
+    print("matrix = A_b2 = ([[2, 3, 4, 5, 6],"
                      +"[-5, 3, 4, -2, 3],"
                      +"[4, -5, -2, 2, 6],"
                      +"[4, 5, -1, -2, -3],"
